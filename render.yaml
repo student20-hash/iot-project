@@ -3,7 +3,7 @@ services:
     name: ashishvegan-iot
     runtime: node
     plan: free
-    buildCommand: npm install && (npm rebuild sqlite3 --build-from-source || true)
+    buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /api/health
     envVars:
