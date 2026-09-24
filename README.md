@@ -92,7 +92,7 @@ This project is tailored specifically for **Render**:
    - If using **Blueprint**, select your repository; Render will automatically detect `render.yaml`!
    - If creating a manual **Web Service**:
      - **Environment:** `Node`
-     - **Build Command:** `npm install`
+     - **Build Command:** `npm install && (npm rebuild sqlite3 --build-from-source || true)`
      - **Start Command:** `node server.js`
      - **Environment Variables:**
        - `NODE_ENV` = `production`
