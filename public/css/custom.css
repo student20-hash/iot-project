@@ -1,0 +1,152 @@
+/* Custom Styles for AshishVegan IoT Platform */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=VT323&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --primary-green: #10b981;
+  --primary-dark: #064e3b;
+  --primary-light: #d1fae5;
+  --accent-emerald: #059669;
+  --lcd-bg: #8ba870;
+  --lcd-pixel: #132b13;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0c1512;
+  color: #f0fdf4;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(18, 38, 29, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px -3px rgba(16, 185, 129, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(52, 211, 153, 0.3);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6), 0 0 20px -2px rgba(16, 185, 129, 0.12);
+}
+
+/* Neon Glow Accents */
+.glow-green {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.45);
+}
+
+.glow-green-sm {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+}
+
+/* Realistic 16x2 LCD Display */
+.lcd-bezel {
+  background: linear-gradient(145deg, #1e2922, #0d1612);
+  border: 4px solid #223e31;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.8), 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.lcd-screen {
+  background-color: #7d9f67;
+  box-shadow: inset 0 3px 10px rgba(0,0,0,0.5), 0 0 15px rgba(125, 159, 103, 0.35);
+  font-family: 'VT323', monospace;
+  color: #122410;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
+  letter-spacing: 2px;
+}
+
+.lcd-char-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 2px;
+}
+
+.lcd-char-box {
+  background: rgba(18, 36, 16, 0.04);
+  border-radius: 1px;
+  text-align: center;
+}
+
+/* Seek Bar / Slider Animations */
+.seek-bar-track {
+  position: relative;
+  height: 12px;
+  border-radius: 9999px;
+  background: #193327;
+  overflow: visible;
+}
+
+.seek-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.seek-bar-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 3px solid #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulsing Status Dot */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* LED Light Animation */
+.led-lamp {
+  transition: all 0.4s ease;
+}
+
+.led-lamp.active {
+  background: radial-gradient(circle, #86efac 0%, #22c55e 40%, #15803d 100%);
+  box-shadow: 0 0 35px #22c55e, 0 0 70px rgba(34, 197, 94, 0.5), inset 0 0 15px #dcfce7;
+  border-color: #86efac;
+}
+
+.led-lamp.inactive {
+  background: radial-gradient(circle, #273e33 0%, #172720 70%, #0d1712 100%);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+  border-color: #273e33;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1c16;
+}
+::-webkit-scrollbar-thumb {
+  background: #234737;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Tab Active State */
+.nav-tab.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.3));
+  border-color: #10b981;
+  color: #6ee7b7;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+}
